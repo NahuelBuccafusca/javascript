@@ -12,16 +12,20 @@ else {
 
 //descuento promoción nuevos clientes//
 const resta = function (a, b) {
-    //     return a - b;
+    return a - b;
 };
-const precioproductos = 1000;
+const precioProductos = 1000;
 const descuento = 10;
-let preciopromocion = resta(precioproductos, descuento);
-console.log(resta(precioproductos, descuento));
+let preciopromocion = resta(precioProductos, descuento);
+console.log(preciopromocion);
+
+
 
 //turnos diarios//
-for (let turno = 1; turno <= 20; turno++) {
-    let nombre = prompt("ingrese su numbre y recibirá un turno para hoy");
+let turno = 1;
+while (turno <= 20) {
+    let nombre = prompt("Ingrese su nombre y recibirá un turno para hoy:");
     alert(`${nombre}, tu turno es el numero ${turno}`);
+    turno++;
 }
 alert("No hay mas turnos disponibles, volvé mañana");
