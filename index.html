@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,18 +8,43 @@
     <link rel="stylesheet" href="./style.css">
     <title>Repuestos munro</title>
 </head>
+
 <body>
-   <header> 
-    <h1>Repuestos Munro</h1>
-   </header> 
-   <main>
-    <article>
-        "Somos una empresa dedicada a la importación y venta de repuestos para el automotor"
-    </article>
-   </main>
+    <header>
+        <h1>Repuestos Munro</h1>
+        <ul>
+            <li>Inicio </li>
+            <a href="/productos.html">
+                <li>Productos</li>
+            </a>
+            <li>Contacto</li>
+        </ul>
+    </header>
+    <main>
+        <div class="usuario">
+            <form class="formulario" id="formulario">
+                <p>Si no está registrado ingrese sus datos a continuacion:</p>
+                <label for="nombre">Ingrese su nombre</label>
+                <input type="text" id="nombre" />
+                <label for="apellido">Ingrese su apellido</label>
+                <input type="text" id="apellido" />
+                <label for="mail">Ingrese su mail</label>
+                <input type="text" id="mail" />
+                <label for="dni">Ingrese su dni</label>
+                <input type="number" id="dni" />
+                <br />
+                <button class="boton" type="submit">registrarme</button>
+            </form>
+        </div>
+        <article>
+            "Somos una empresa dedicada a la importación y venta de repuestos para el automotor"
+        </article>
+    </main>
     <footer id="cierre">
         <div>Tel: 1531053285/ mail: repuestosmunro@outlook.com / Ig: @repuestosmunro</div>
     </footer>
-   <script src="/main.js"></script> 
+    <script src="/productos.js"></script>
+    <script src="/main.js"></script>
 </body>
+
 </html>
