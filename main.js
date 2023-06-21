@@ -1,16 +1,16 @@
 //ingreso a la página//
 
-class clientes{
-    constructor(mail, apellido, dni){
-        this.mail= mail;
-        this.apellido= apellido;
-        this.dni= dni;
-    }
+class clientes {
+  constructor(mail, apellido, dni) {
+    this.mail = mail;
+    this.apellido = apellido;
+    this.dni = dni;
+  }
 }
-const carteraClientes =[]
-const clienteNahuel= new clientes ("n.buccafusca@outlook.com.ar", "Buccafusca", 39266921);
-const clienteGerman= new clientes ("g.montero@outlook.com.ar", "Montero", 32566921);
-const clienteAgustin= new clientes ("a.miraglia@outlook.com.ar", "Miraglia", 35566921);
+const carteraClientes = []
+const clienteNahuel = new clientes("n.buccafusca@outlook.com.ar", "Buccafusca", 39266921);
+const clienteGerman = new clientes("g.montero@outlook.com.ar", "Montero", 32566921);
+const clienteAgustin = new clientes("a.miraglia@outlook.com.ar", "Miraglia", 35566921);
 
 carteraClientes.push(clienteNahuel);
 carteraClientes.push(clienteGerman);
@@ -25,15 +25,24 @@ formulario.addEventListener("submit", (e) => {
 
   const nombre = document.getElementById("nombre").value;
   const apellido = document.getElementById("apellido").value;
-  const mail= document.getElementById("mail").value;
-  const dni= document.getElementById("dni").value;
-  
-  const clienteNuevo = new clientes(nombre, apellido,mail,dni);
- 
+  const mail = document.getElementById("mail").value;
+  const dni = document.getElementById("dni").value;
+
+  const clienteNuevo = new clientes(nombre, apellido, mail, dni);
+
   carteraClientes.push(clienteNuevo);
   localStorage.setItem("clientenuevo", JSON.stringify(clienteNuevo));
 
   formulario.reset();
+
+  (dni == 39266921 | dni == 32566921 | dni == 35566921) ?
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Usuario ya registrado',
+      footer: '<a href="">Intentar de nuevo</a>'
+    }) : Swal.fire('Usuario registrado, bienvenido')
+
 })
 
 
