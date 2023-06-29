@@ -17,7 +17,6 @@ carteraClientes.push(clienteGerman);
 carteraClientes.push(clienteAgustin);
 
 localStorage.setItem("clientela", JSON.stringify(carteraClientes));
-
 const formulario = document.getElementById("formulario");
 
 formulario.addEventListener("submit", (e) => {
@@ -45,5 +44,18 @@ formulario.addEventListener("submit", (e) => {
 
 })
 
+let guardados = document.getElementById("guardados")
+let registrado = document.getElementById("clientes");
 
-
+registrado.addEventListener("click", () => {
+  const cliente = JSON.parse(localStorage.getItem("clientela"));
+  cliente.forEach((item) => {
+    let persona = document.createElement("div");
+    persona.className = "persona"
+    persona.innerHTML = `
+    <h2>Apellido:${item.apellido}</h2>
+    <p>Mail:${item.mail}</p>
+    <p>Dni:${item.dni}</p>`
+    guardados.append(persona)
+  })
+})
